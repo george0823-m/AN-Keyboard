@@ -1,7 +1,5 @@
 # Keyman Developer Installation & Build Guide
 
-## Why You Need This
-
 Keyman Developer is the official IDE for building Keyman keyboards. While
 this project's source files (`.kmn`, `.kvks`, `.kps`,
 `.keyman-touch-layout`) can be edited on any platform, **compiling them
