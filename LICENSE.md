@@ -43,5 +43,4 @@ separate permission.
 
 ## Contact
 
-For questions about this keyboard, contact the package maintainer through
-the Workana platform.
+For questions about this keyboard, contact the package maintainer through the Workana platform.
