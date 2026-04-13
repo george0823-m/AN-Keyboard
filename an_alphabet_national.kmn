@@ -1,0 +1,228 @@
+c =====================================================================
+c AN - Alphabet National de Guinée (autres langues)
+c Keyman Keyboard Source File (.kmn)
+c =====================================================================
+c
+c Purpose:
+c   Cross-platform keyboard for Guinea's National Alphabet (AN).
+c   Serves multiple Guinean languages: Poular, Kissi, Baga, Guerzé,
+c   Maninka, Soussou, and others.
+c
+c Layout: AZERTY positional (with G/Z swap per client spec)
+c   Row 2: A G E R T Y U I O P  (G at AZERTY Z position)
+c   Row 3: Q S D F Z H J K L M  (Z at AZERTY G position)
+c   Row 4: W X C V B N
+c
+c IMPORTANT — Positional Mode (&MNEMONICLAYOUT '0'):
+c   Keyman's positional mode matches physical keys by their US QWERTY
+c   VK codes. To implement an AZERTY layout, we must use the US QWERTY
+c   VK code that corresponds to the PHYSICAL POSITION where each AZERTY
+c   letter sits on a French physical keyboard.
+c
+c   AZERTY letter → Physical position → US QWERTY VK code
+c     A  →  row 2 col 1  →  [K_Q]
+c     Z  →  row 2 col 2  →  [K_W]
+c     Q  →  row 3 col 1  →  [K_A]
+c     M  →  row 3 col 10 →  [K_COLON]
+c     W  →  row 4 col 2  →  [K_Z]
+c   (other letters are at same positions in QWERTY and AZERTY)
+c
+c Font Strategy:
+c   The AN font (NationalAlphabetRegular5.ttf) maps custom AN glyphs
+c   to standard Latin codepoints. Pressing AZERTY 'a' outputs U+0061
+c   which the font renders as the AN 'a' glyph.
+c =====================================================================
+
+c ---------------------------------------------------------------------
+c Metadata
+c ---------------------------------------------------------------------
+store(&VERSION) '10.0'
+store(&NAME) 'AN - Alphabet National de Guinée'
+store(&COPYRIGHT) '© 2026 Alphabet National de Guinée'
+store(&KEYBOARDVERSION) '2.5'
+store(&TARGETS) 'any'
+store(&VISUALKEYBOARD) 'an_alphabet_national.kvks'
+store(&LAYOUTFILE) 'an_alphabet_national.keyman-touch-layout'
+store(&BITMAP) 'an_alphabet_national.ico'
+store(&MNEMONICLAYOUT) '0'
+
+c ---------------------------------------------------------------------
+c Entry point
+c ---------------------------------------------------------------------
+begin Unicode > use(main)
+
+c =====================================================================
+c GROUP: main — primary key dispatch
+c =====================================================================
+group(main) using keys
+
+c ---------------------------------------------------------------------
+c LAYER: Default — AZERTY Row 2 letters (lowercase)
+c Physical positions: Row 2 of AZERTY keyboard
+c AZERTY layout: A G E R T Y U I O P  (G replaces Z per client spec)
+c ---------------------------------------------------------------------
++ [NCAPS K_Q] > 'a'    c AZERTY 'A' at row 2 col 1 (QWERTY Q pos)
++ [K_W]       > 'g'    c AZERTY 'G' at row 2 col 2 (QWERTY W pos) — swap
++ [NCAPS K_E] > 'e'    c AZERTY 'E' at row 2 col 3
++ [K_R]       > 'r'    c AZERTY 'R'
++ [K_T]       > 't'    c AZERTY 'T'
++ [K_Y]       > 'y'    c AZERTY 'Y'
++ [NCAPS K_U] > 'u'    c AZERTY 'U'
++ [NCAPS K_I] > 'i'    c AZERTY 'I'
++ [NCAPS K_O] > 'o'    c AZERTY 'O'
++ [K_P]       > 'p'    c AZERTY 'P'
+
+c ---------------------------------------------------------------------
+c LAYER: Default — AZERTY Row 3 letters (lowercase)
+c Physical positions: Row 3 of AZERTY keyboard
+c AZERTY layout: Q S D F Z H J K L M  (Z replaces G per client spec)
+c ---------------------------------------------------------------------
++ [K_A]       > 'q'    c AZERTY 'Q' at row 3 col 1 (QWERTY A pos)
++ [K_S]       > 's'    c AZERTY 'S' at row 3 col 2
++ [K_D]       > 'd'    c AZERTY 'D' at row 3 col 3
++ [K_F]       > 'f'    c AZERTY 'F' at row 3 col 4
++ [K_G]       > 'z'    c AZERTY 'Z' at row 3 col 5 (QWERTY G pos) — swap
++ [K_H]       > 'h'    c AZERTY 'H' at row 3 col 6
++ [K_J]       > 'j'    c AZERTY 'J' at row 3 col 7
++ [K_K]       > 'k'    c AZERTY 'K' at row 3 col 8
++ [K_L]       > 'l'    c AZERTY 'L' at row 3 col 9
++ [K_COLON]   > 'm'    c AZERTY 'M' at row 3 col 10 (QWERTY ; pos)
+
+c ---------------------------------------------------------------------
+c LAYER: Default — AZERTY Row 4 letters (lowercase)
+c Physical positions: Row 4 of AZERTY keyboard
+c AZERTY layout: W X C V B N
+c ---------------------------------------------------------------------
++ [K_Z]       > 'w'    c AZERTY 'W' at row 4 col 2 (QWERTY Z pos)
++ [K_X]       > 'x'    c AZERTY 'X'
++ [K_C]       > 'c'    c AZERTY 'C'
++ [K_V]       > 'v'    c AZERTY 'V'
++ [K_B]       > 'b'    c AZERTY 'B'
++ [K_N]       > 'n'    c AZERTY 'N'
+
+c ---------------------------------------------------------------------
+c LAYER: Default — Digit row
+c On AZERTY, digits are on Shift layer; here we expose them directly.
+c The AN font renders each digit codepoint as its native AN number glyph.
+c ---------------------------------------------------------------------
++ [K_1] > '1'
++ [K_2] > '2'
++ [K_3] > '3'
++ [K_4] > '4'
++ [K_5] > '5'
++ [K_6] > '6'
++ [K_7] > '7'
++ [K_8] > '8'
++ [K_9] > '9'
++ [K_0] > '0'
+
+c ---------------------------------------------------------------------
+c LAYER: Default — AZERTY Row 4 punctuation
+c AZERTY layout: , ; : !  (at physical QWERTY positions M , . /)
+c ---------------------------------------------------------------------
++ [K_M]       > ','    c AZERTY ',' at row 4 col 8 (QWERTY M pos)
++ [K_COMMA]   > ';'    c AZERTY ';' at row 4 col 9 (QWERTY , pos)
++ [K_PERIOD]  > ':'    c AZERTY ':' at row 4 col 10 (QWERTY . pos)
++ [K_SLASH]   > '!'    c AZERTY '!' at row 4 col 11 (QWERTY / pos)
+
+c ---------------------------------------------------------------------
+c LAYER: Default — AZERTY ù key and miscellaneous
+c The ù key is at AZERTY row 3 col 11 (QWERTY ' position)
+c ---------------------------------------------------------------------
++ [K_QUOTE]   > U+00F9   c AZERTY 'ù' at row 3 col 11 (QWERTY ' pos)
+
+c ---------------------------------------------------------------------
+c LAYER: Shift — AZERTY Row 2 uppercase
+c ---------------------------------------------------------------------
++ [SHIFT NCAPS K_Q] > 'A'
++ [SHIFT K_W]       > 'G'
++ [SHIFT NCAPS K_E] > 'E'
++ [SHIFT K_R]       > 'R'
++ [SHIFT K_T]       > 'T'
++ [SHIFT K_Y]       > 'Y'
++ [SHIFT NCAPS K_U] > 'U'
++ [SHIFT NCAPS K_I] > 'I'
++ [SHIFT NCAPS K_O] > 'O'
++ [SHIFT K_P]       > 'P'
+
+c ---------------------------------------------------------------------
+c LAYER: Shift — AZERTY Row 3 uppercase
+c ---------------------------------------------------------------------
++ [SHIFT K_A]       > 'Q'
++ [SHIFT K_S]       > 'S'
++ [SHIFT K_D]       > 'D'
++ [SHIFT K_F]       > 'F'
++ [SHIFT K_G]       > 'Z'
++ [SHIFT K_H]       > 'H'
++ [SHIFT K_J]       > 'J'
++ [SHIFT K_K]       > 'K'
++ [SHIFT K_L]       > 'L'
++ [SHIFT K_COLON]   > 'M'
+
+c ---------------------------------------------------------------------
+c LAYER: Shift — AZERTY Row 4 uppercase
+c ---------------------------------------------------------------------
++ [SHIFT K_Z]       > 'W'
++ [SHIFT K_X]       > 'X'
++ [SHIFT K_C]       > 'C'
++ [SHIFT K_V]       > 'V'
++ [SHIFT K_B]       > 'B'
++ [SHIFT K_N]       > 'N'
+
+c ---------------------------------------------------------------------
+c LAYER: Shift — Digit row symbols (font-available symbols only)
+c ---------------------------------------------------------------------
++ [SHIFT K_1] > '!'
++ [SHIFT K_4] > '$'
+
+c ---------------------------------------------------------------------
+c LAYER: Shift — Uppercase ù
+c ---------------------------------------------------------------------
++ [SHIFT K_QUOTE] > U+00D9   c Ù
+
+c ---------------------------------------------------------------------
+c LAYER: AltGr (Right Alt) — Vowel variants (single)
+c Per client spec: "Simple variants: AltGr + Key"
+c Use AZERTY positional codes for the vowel keys.
+c ---------------------------------------------------------------------
++ [RALT NCAPS K_Q] > U+00E1   c AltGr + AZERTY 'A' → á
++ [RALT NCAPS K_E] > U+00E9   c AltGr + AZERTY 'E' → é
++ [RALT NCAPS K_I] > U+00EF   c AltGr + AZERTY 'I' → ï
++ [RALT NCAPS K_O] > U+00F3   c AltGr + AZERTY 'O' → ó
++ [RALT NCAPS K_U] > U+00F9   c AltGr + AZERTY 'U' → ù
+
+c ---------------------------------------------------------------------
+c LAYER: AltGr+Shift — Second vowel variants
+c Per client spec: "Double variants: AltGr+Shift + Key"
+c ---------------------------------------------------------------------
++ [RALT SHIFT NCAPS K_E] > U+00EA   c ê  (E variant 2)
++ [RALT SHIFT NCAPS K_O] > U+00F4   c ô  (O variant 2)
+
+c ---------------------------------------------------------------------
+c LAYER: AltGr + CapsLock — Uppercase vowel variants
+c ---------------------------------------------------------------------
++ [RALT CAPS K_Q] > U+00C1   c Á
++ [RALT CAPS K_E] > U+00C9   c É
++ [RALT CAPS K_I] > U+00CF   c Ï
++ [RALT CAPS K_O] > U+00D3   c Ó
++ [RALT CAPS K_U] > U+00D9   c Ù
+
+c ---------------------------------------------------------------------
+c LAYER: AltGr+Shift + CapsLock — Second uppercase variants
+c ---------------------------------------------------------------------
++ [RALT SHIFT CAPS K_E] > U+00CA   c Ê
++ [RALT SHIFT CAPS K_O] > U+00D4   c Ô
+
+c ---------------------------------------------------------------------
+c Space
+c ---------------------------------------------------------------------
++ [K_SPACE] > ' '
+
+c =====================================================================
+c END OF FILE
+c
+c System keys NOT mapped (intentionally):
+c   K_BKSP, K_ENTER, K_TAB, arrows, Home, End, Delete
+c   → Keyman passes these through to the system unchanged.
+c   → CRITICAL: DO NOT map K_BKSP to U+0008 (would break delete).
+c =====================================================================

@@ -1,0 +1,27 @@
+# Compiled outputs (rebuild with: npx kmc build file *.kmn && npx kmc build file *.kps)
+*.kmx
+*.kvk
+*.js
+*.kmp
+
+# Build directory
+build/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Font backups
+*.ttf.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor temp files
+*~
+*.swp
+*.swo
+.vscode/
+.idea/

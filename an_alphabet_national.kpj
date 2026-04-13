@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KeymanDeveloperProject>
+  <Options>
+    <BuildPath>$PROJECTPATH\build</BuildPath>
+    <SourcePath>$PROJECTPATH\source</SourcePath>
+    <Version>2.0</Version>
+  </Options>
+  <Files>
+    <File>
+      <ID>id_an_kmn</ID>
+      <Filename>an_alphabet_national.kmn</Filename>
+      <Filepath>$PROJECTPATH\an_alphabet_national.kmn</Filepath>
+      <FileVersion>10.0</FileVersion>
+      <FileType>.kmn</FileType>
+      <Details>
+        <Name>AN-Alphabet National de Guinée (autres langues)</Name>
+        <Copyright>© 2026</Copyright>
+        <Message></Message>
+      </Details>
+    </File>
+    <File>
+      <ID>id_an_kps</ID>
+      <Filename>an_alphabet_national.kps</Filename>
+      <Filepath>$PROJECTPATH\an_alphabet_national.kps</Filepath>
+      <FileVersion>10.0</FileVersion>
+      <FileType>.kps</FileType>
+    </File>
+  </Files>
+</KeymanDeveloperProject>

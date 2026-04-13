@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@keymanapp/kmc": "^18.0.249"
+  }
+}

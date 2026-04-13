@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  AN - Alphabet National de Guinée (autres langues)
+  Visual Keyboard (.kvks) — AZERTY POSITIONAL LAYOUT
+
+  Each <key vkey="K_X"> refers to the US QWERTY VK code for the
+  PHYSICAL KEY POSITION where the AZERTY letter is located. For example,
+  AZERTY 'A' is physically at the position that is 'Q' on US QWERTY,
+  so we use vkey="K_Q" with text 'a'.
+-->
+<visualkeyboard>
+  <header>
+    <version>10.0</version>
+    <kbdname>AN-Alphabet National de Guinée (autres langues)</kbdname>
+    <flags/>
+  </header>
+
+  <encoding name="unicode" fontname="Alphabet National-AN de Guinee" fontsize="14">
+
+    <layer shift="None">
+      <!-- Row 1: Digits -->
+      <key vkey="K_1">1</key>
+      <key vkey="K_2">2</key>
+      <key vkey="K_3">3</key>
+      <key vkey="K_4">4</key>
+      <key vkey="K_5">5</key>
+      <key vkey="K_6">6</key>
+      <key vkey="K_7">7</key>
+      <key vkey="K_8">8</key>
+      <key vkey="K_9">9</key>
+      <key vkey="K_0">0</key>
+
+      <!-- Row 2 (AZERTY): A G E R T Y U I O P -->
+      <key vkey="K_Q">a</key>
+      <key vkey="K_W">g</key>
+      <key vkey="K_E">e</key>
+      <key vkey="K_R">r</key>
+      <key vkey="K_T">t</key>
+      <key vkey="K_Y">y</key>
+      <key vkey="K_U">u</key>
+      <key vkey="K_I">i</key>
+      <key vkey="K_O">o</key>
+      <key vkey="K_P">p</key>
+
+      <!-- Row 3 (AZERTY): Q S D F Z H J K L M ù -->
+      <key vkey="K_A">q</key>
+      <key vkey="K_S">s</key>
+      <key vkey="K_D">d</key>
+      <key vkey="K_F">f</key>
+      <key vkey="K_G">z</key>
+      <key vkey="K_H">h</key>
+      <key vkey="K_J">j</key>
+      <key vkey="K_K">k</key>
+      <key vkey="K_L">l</key>
+      <key vkey="K_COLON">m</key>
+      <key vkey="K_QUOTE">&#x00F9;</key>
+
+      <!-- Row 4 (AZERTY): W X C V B N , ; : ! -->
+      <key vkey="K_Z">w</key>
+      <key vkey="K_X">x</key>
+      <key vkey="K_C">c</key>
+      <key vkey="K_V">v</key>
+      <key vkey="K_B">b</key>
+      <key vkey="K_N">n</key>
+      <key vkey="K_M">,</key>
+      <key vkey="K_COMMA">;</key>
+      <key vkey="K_PERIOD">:</key>
+      <key vkey="K_SLASH">!</key>
+    </layer>
+
+    <layer shift="Shift">
+      <!-- Row 1 Shift -->
+      <key vkey="K_1">!</key>
+      <key vkey="K_4">$</key>
+
+      <!-- Row 2 Shift: uppercase -->
+      <key vkey="K_Q">A</key>
+      <key vkey="K_W">G</key>
+      <key vkey="K_E">E</key>
+      <key vkey="K_R">R</key>
+      <key vkey="K_T">T</key>
+      <key vkey="K_Y">Y</key>
+      <key vkey="K_U">U</key>
+      <key vkey="K_I">I</key>
+      <key vkey="K_O">O</key>
+      <key vkey="K_P">P</key>
+
+      <!-- Row 3 Shift: uppercase -->
+      <key vkey="K_A">Q</key>
+      <key vkey="K_S">S</key>
+      <key vkey="K_D">D</key>
+      <key vkey="K_F">F</key>
+      <key vkey="K_G">Z</key>
+      <key vkey="K_H">H</key>
+      <key vkey="K_J">J</key>
+      <key vkey="K_K">K</key>
+      <key vkey="K_L">L</key>
+      <key vkey="K_COLON">M</key>
+      <key vkey="K_QUOTE">&#x00D9;</key>
+
+      <!-- Row 4 Shift: uppercase -->
+      <key vkey="K_Z">W</key>
+      <key vkey="K_X">X</key>
+      <key vkey="K_C">C</key>
+      <key vkey="K_V">V</key>
+      <key vkey="K_B">B</key>
+      <key vkey="K_N">N</key>
+    </layer>
+
+    <layer shift="RAlt">
+      <!-- AltGr layer: vowel variants (single) -->
+      <key vkey="K_Q">&#x00E1;</key>
+      <key vkey="K_E">&#x00E9;</key>
+      <key vkey="K_I">&#x00EF;</key>
+      <key vkey="K_O">&#x00F3;</key>
+      <key vkey="K_U">&#x00F9;</key>
+    </layer>
+
+    <layer shift="Shift RAlt">
+      <!-- AltGr+Shift: second variants -->
+      <key vkey="K_E">&#x00EA;</key>
+      <key vkey="K_O">&#x00F4;</key>
+    </layer>
+
+  </encoding>
+</visualkeyboard>

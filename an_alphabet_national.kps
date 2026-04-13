@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AN - Alphabet National de Guinée (autres langues)
+  Keyman Package Source File (.kps)
+
+  Defines the package contents, metadata, and installation behavior
+  for the AN keyboard. This file is processed by Keyman Developer
+  to produce a .kmp file that users install.
+-->
+<Package>
+  <System>
+    <KeymanDeveloperVersion>17.0</KeymanDeveloperVersion>
+    <FileVersion>7.0</FileVersion>
+  </System>
+
+  <Options>
+    <ExecuteProgram></ExecuteProgram>
+    <ReadMeFile>readme.htm</ReadMeFile>
+    <GraphicFile>welcome.png</GraphicFile>
+    <LicenseFile>LICENSE.md</LicenseFile>
+  </Options>
+
+  <StartMenu>
+    <Folder>AN - Alphabet National de Guinée</Folder>
+    <AddUninstallEntry/>
+    <Items>
+      <Item>
+        <Name>Documentation</Name>
+        <FileName>readme.htm</FileName>
+      </Item>
+      <Item>
+        <Name>License</Name>
+        <FileName>LICENSE.md</FileName>
+      </Item>
+    </Items>
+  </StartMenu>
+
+  <Info>
+    <Name>AN - Alphabet National de Guinée</Name>
+    <Copyright>© 2026 Alphabet National de Guinée</Copyright>
+    <Author>Yuri Silva</Author>
+    <Description>
+      Keyman keyboard for the National Alphabet of Guinea (Alphabet National de Guinée).
+      A unified keyboard layout serving multiple Guinean national languages including
+      Poular, Kissi, Baga, Guerzé, Maninka, Soussou, and others.
+
+      Features:
+      - 32 base AN letters (26 standard + 6 vowel variants)
+      - 10 AN native digit keys
+      - Modified AZERTY layout (G/Z swapped from standard positions)
+      - 4 layers: Default, Shift, AltGr, AltGr+Shift
+      - Mobile long-press menu for vowel variants (A/E/I/O)
+      - Globe key for switching between AN and system keyboard
+      - Cross-platform: Windows, macOS, iOS, Android
+    </Description>
+    <Version>2.5</Version>
+    <WebSite>https://workana.com</WebSite>
+  </Info>
+
+  <Files>
+    <File>
+      <Name>an_alphabet_national.kmx</Name>
+      <Description>Compiled keyboard file</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.kmx</FileType>
+    </File>
+    <File>
+      <Name>an_alphabet_national.kvk</Name>
+      <Description>On-Screen Keyboard layout</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.kvk</FileType>
+    </File>
+    <File>
+      <Name>an_alphabet_national.js</Name>
+      <Description>KeymanWeb (touch/mobile) compiled keyboard</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.js</FileType>
+    </File>
+    <File>
+      <Name>NationalAlphabetRegular5.ttf</Name>
+      <Description>National Alphabet font (Regular)</Description>
+      <CopyLocation>3</CopyLocation>
+      <FileType>.ttf</FileType>
+    </File>
+    <File>
+      <Name>an_alphabet_national.ico</Name>
+      <Description>Keyboard icon (logo)</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.ico</FileType>
+    </File>
+    <File>
+      <Name>readme.htm</Name>
+      <Description>Documentation</Description>
+      <CopyLocation>0</CopyLocation>
+    </File>
+    <File>
+      <Name>welcome.png</Name>
+      <Description>Welcome image</Description>
+      <CopyLocation>0</CopyLocation>
+    </File>
+    <File>
+      <Name>LICENSE.md</Name>
+      <Description>License terms</Description>
+      <CopyLocation>0</CopyLocation>
+    </File>
+  </Files>
+
+  <Keyboards>
+    <Keyboard>
+      <Name>AN - Alphabet National de Guinée</Name>
+      <ID>an_alphabet_national</ID>
+      <Version>2.5</Version>
+      <OSKFont>NationalAlphabetRegular5.ttf</OSKFont>
+      <DisplayFont>NationalAlphabetRegular5.ttf</DisplayFont>
+      <Languages>
+        <!-- Languages named in "AN Keyboard (X)" pattern to match display -->
+        <Language ID="bog">AN Keyboard (Baga)</Language>
+        <Language ID="kqs">AN Keyboard (Kissi)</Language>
+        <Language ID="fuf">AN Keyboard (Poular)</Language>
+        <Language ID="gkp">AN Keyboard (Guerzé)</Language>
+        <Language ID="man">AN Keyboard (Maninka)</Language>
+        <Language ID="sus">AN Keyboard (Soussou)</Language>
+        <Language ID="fr-GN">AN Keyboard (French)</Language>
+      </Languages>
+    </Keyboard>
+  </Keyboards>
+
+  <Strings/>
+</Package>
